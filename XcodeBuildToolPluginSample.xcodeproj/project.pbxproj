@@ -120,6 +120,7 @@
 			packageReferences = (
 				4C33BFE72A265B1E001B077F /* XCRemoteSwiftPackageReference "LicensePlist" */,
 				4C33BFF02A2663F9001B077F /* XCRemoteSwiftPackageReference "SwiftGenPlugin" */,
+				4C6225C82A26662F004DC566 /* XCRemoteSwiftPackageReference "swift-format" */,
 			);
 			productRefGroup = 4C33BFD72A265AE4001B077F /* Products */;
 			projectDirPath = "";
@@ -408,6 +409,14 @@
 			requirement = {
 				branch = "xcodeproject-support";
 				kind = branch;
+			};
+		};
+		4C6225C82A26662F004DC566 /* XCRemoteSwiftPackageReference "swift-format" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-format";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 508.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
