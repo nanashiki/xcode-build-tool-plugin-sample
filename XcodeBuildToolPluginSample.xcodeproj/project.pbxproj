@@ -11,6 +11,7 @@
 		4C33BFDC2A265AE4001B077F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33BFDB2A265AE4001B077F /* ContentView.swift */; };
 		4C33BFDE2A265AE5001B077F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C33BFDD2A265AE5001B077F /* Assets.xcassets */; };
 		4C33BFE12A265AE5001B077F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C33BFE02A265AE5001B077F /* Preview Assets.xcassets */; };
+		4C33BFEB2A265B3E001B077F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C33BFEA2A265B3E001B077F /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		4C33BFDB2A265AE4001B077F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4C33BFDD2A265AE5001B077F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C33BFE02A265AE5001B077F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4C33BFEA2A265B3E001B077F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 				4C33BFD92A265AE4001B077F /* XcodeBuildToolPluginSampleApp.swift */,
 				4C33BFDB2A265AE4001B077F /* ContentView.swift */,
 				4C33BFDD2A265AE5001B077F /* Assets.xcassets */,
+				4C33BFEA2A265B3E001B077F /* Settings.bundle */,
 				4C33BFDF2A265AE5001B077F /* Preview Content */,
 			);
 			path = XcodeBuildToolPluginSample;
@@ -77,10 +80,12 @@
 				4C33BFD22A265AE4001B077F /* Sources */,
 				4C33BFD32A265AE4001B077F /* Frameworks */,
 				4C33BFD42A265AE4001B077F /* Resources */,
+				4C33BFEC2A265B98001B077F /* Copy Acknowledgements */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4C33BFE92A265B25001B077F /* PBXTargetDependency */,
 			);
 			name = XcodeBuildToolPluginSample;
 			productName = XcodeBuildToolPluginSample;
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 4C33BFCD2A265AE4001B077F;
+			packageReferences = (
+				4C33BFE72A265B1E001B077F /* XCRemoteSwiftPackageReference "LicensePlist" */,
+			);
 			productRefGroup = 4C33BFD72A265AE4001B077F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,11 +134,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C33BFE12A265AE5001B077F /* Preview Assets.xcassets in Resources */,
+				4C33BFEB2A265B3E001B077F /* Settings.bundle in Resources */,
 				4C33BFDE2A265AE5001B077F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C33BFEC2A265B98001B077F /* Copy Acknowledgements */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Acknowledgements";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Will copy acknowledgements\"\n\nACKNOWLEDGEMENTS_DIR=${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/com.mono0926.LicensePlist.Output\nDESTINATION_PATH=${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Settings.bundle/\n\ncp -r ${ACKNOWLEDGEMENTS_DIR}/* ${DESTINATION_PATH}\nrm -rf ${ACKNOWLEDGEMENTS_DIR}\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4C33BFD22A265AE4001B077F /* Sources */ = {
@@ -143,6 +173,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C33BFE92A265B25001B077F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 4C33BFE82A265B25001B077F /* LicensePlistBuildTool */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4C33BFE22A265AE5001B077F /* Debug */ = {
@@ -274,6 +311,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,6 +340,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,6 +376,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4C33BFE72A265B1E001B077F /* XCRemoteSwiftPackageReference "LicensePlist" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mono0926/LicensePlist";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4C33BFE82A265B25001B077F /* LicensePlistBuildTool */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C33BFE72A265B1E001B077F /* XCRemoteSwiftPackageReference "LicensePlist" */;
+			productName = "plugin:LicensePlistBuildTool";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4C33BFCE2A265AE4001B077F /* Project object */;
 }
