@@ -85,6 +85,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4C33BFEF2A2662EA001B077F /* PBXTargetDependency */,
 				4C33BFE92A265B25001B077F /* PBXTargetDependency */,
 			);
 			name = XcodeBuildToolPluginSample;
@@ -118,6 +119,7 @@
 			mainGroup = 4C33BFCD2A265AE4001B077F;
 			packageReferences = (
 				4C33BFE72A265B1E001B077F /* XCRemoteSwiftPackageReference "LicensePlist" */,
+				4C33BFF02A2663F9001B077F /* XCRemoteSwiftPackageReference "SwiftGenPlugin" */,
 			);
 			productRefGroup = 4C33BFD72A265AE4001B077F /* Products */;
 			projectDirPath = "";
@@ -178,6 +180,10 @@
 		4C33BFE92A265B25001B077F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 4C33BFE82A265B25001B077F /* LicensePlistBuildTool */;
+		};
+		4C33BFEF2A2662EA001B077F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 4C33BFEE2A2662EA001B077F /* SwiftGenPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -304,6 +310,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"XcodeBuildToolPluginSample/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -333,6 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"XcodeBuildToolPluginSample/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -386,6 +394,22 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		4C33BFED2A2662DD001B077F /* XCRemoteSwiftPackageReference "SwiftGenPlugin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftGen/SwiftGenPlugin";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		4C33BFF02A2663F9001B077F /* XCRemoteSwiftPackageReference "SwiftGenPlugin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BookBeat/SwiftGenPlugin/";
+			requirement = {
+				branch = "xcodeproject-support";
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -393,6 +417,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4C33BFE72A265B1E001B077F /* XCRemoteSwiftPackageReference "LicensePlist" */;
 			productName = "plugin:LicensePlistBuildTool";
+		};
+		4C33BFEE2A2662EA001B077F /* SwiftGenPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C33BFED2A2662DD001B077F /* XCRemoteSwiftPackageReference "SwiftGenPlugin" */;
+			productName = "plugin:SwiftGenPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
